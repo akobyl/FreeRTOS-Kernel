@@ -1,0 +1,2 @@
+option('memmang', type: 'combo', choices: ['heap_1', 'heap_2', 'heap_3', 'heap_4', 'heap_5'], value: 'heap_2')
+option('arch', type: 'combo', choices: ['ARM_CM3', 'ARM_CM4F'], value: 'ARM_CM4F')
