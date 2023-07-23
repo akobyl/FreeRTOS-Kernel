@@ -2,10 +2,19 @@ project('FreeRTOS',
         'c',
         version : '10.6.0')
 
+c_args = []
+
 memmang = get_option('memmang')
 arch = get_option('arch')
+use_preemption = get_option('use_preemption')
+if use_preemption
+  c_args += '-DconfigUSE_PREEMPTION=1'
+endif
 
-c_args = []
+cpu_clock_hz = get_option('cpu_clock_hz')
+c_args += '-DconfigCPU_CLOCK_HZ=' + cpu_clock_hz
+
+
 freertos_incs = include_directories(
                 'include',
                 'default_config',

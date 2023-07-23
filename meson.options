@@ -1,2 +1,85 @@
 option('memmang', type: 'combo', choices: ['heap_1', 'heap_2', 'heap_3', 'heap_4', 'heap_5'], value: 'heap_2')
 option('arch', type: 'combo', choices: ['ARM_CM3', 'ARM_CM4F'], value: 'ARM_CM4F')
+
+
+# Basic settings
+option('use_preemption', type: 'boolean', value: false)
+option('use_port_optimised_task_selection', type: 'boolean', value: true)
+option('use_tickless_idle', type: 'boolean', value: false)
+option('cpu_clock_hz', type: 'integer')
+option('systick_clock_hz', type: 'integer')
+option('tick_rate_hz', type: 'integer', min: 0, value: 1000)
+option('max_priorities', type: 'integer', value: 5)
+option('minimal_stack_size', type: 'integer', value: 128)
+option('max_task_name_len', type: 'integer', value: 10)
+option('use_16_bit_ticks', type: 'boolean', value: false)
+option('idle_should_yield', type: 'boolean', value: true)
+option('use_task_notifications', type: 'boolean', value: false)
+option('task_notification_array_entries', type: 'integer', min: 1, value: 1)
+
+# Mutex/Semaphores
+option('use_mutexes', type: 'boolean', value: false)
+option('use_recursive_mutexes', type: 'boolean', value: false)
+option('use_counting_semaphores', type: 'boolean', value: false)
+
+option('queue_registry_size', type: 'integer', value: 10)
+option('use_queue_sets', type: 'boolean', value: false)
+option('use_time_slicing', type: 'boolean', value: true)
+option('enable_backward_compatibility', type: 'boolean', value: false)
+option('num_thread_local_storage_pointers', type: 'integer', value: 2)
+option('use_mini_list_item', type: 'boolean', value: true)
+option('stack_depth_type', type: 'string')
+option('message_buffer_length_type', type: 'string')
+option('heap_clear_memory_on_clear', type: 'boolean', value: true)
+
+# Memory allocation 
+option('support_static_allocation', type: 'boolean', value: true)
+option('support_dynamic_allocation', type: 'boolean', value: true)
+option('total_heap_size', type: 'integer')
+option('application_allocated_heap', type: 'boolean', value: false)
+
+# Runtime stats
+option('generate_run_time_stats', type: 'boolean', value: false)
+option('use_trace_facility', type: 'boolean', value: false)
+option('use_stats_formatting_functions', type: 'boolean', value: false)
+
+# Co-routines
+option('use_co_routines', type: 'boolean', value: false)
+option('max_co_routine_priorities', type: 'boolean', value: false)
+
+# Software timers
+option('use_timers', type: 'boolean', value: false)
+option('timer_task_priority', type: 'integer', value: 3)
+option('timer_queue_length', type: 'integer', value: 10)
+option('timer_task_stack_depth', type: 'integer', value: 128)
+
+# Nesting interrupt
+option('kernal_interrupt_priority', type: 'integer')
+option('max_syscall_interrupt_priority', type: 'integer')
+option('max_api_call_interrupt_priority', type: 'integer')
+
+option('use_idle_hook', type: 'boolean', value: false)
+option('use_tick_hook', type: 'boolean', value: false)
+option('check_for_stack_overflow', type: 'boolean', value: false)
+option('use_malloc_failed_hook', type: 'boolean', value: false)
+option('use_application_task_tag', type: 'boolean', value: false)
+
+# Optional functions
+option('INCLUDE_vTaskPrioritySet', type: 'boolean', value: false)
+option('INCLUDE_uxTaskPriorityGet', type: 'boolean', value: false)
+option('INCLUDE_vTaskDelete', type: 'boolean', value: false)
+option('INCLUDE_vTaskCleanUpResources', type: 'boolean', value: false)
+option('INCLUDE_vTaskSuspend', type: 'boolean', value: false)
+option('INCLUDE_vTaskDelayUntil', type: 'boolean', value: false)
+option('INCLUDE_vTaskDelay', type: 'boolean', value: false)
+option('INCLUDE_eTaskGetState', type: 'boolean', value: false)
+option('INCLUDE_xTimerPendFunctionCall', type: 'boolean', value: false)
+option('INCLUDE_xSemaphoreGetMutexHolder', type: 'boolean', value: false)
+option('INCLUDE_xTaskGetHandle', type: 'boolean', value: false)
+option('INCLUDE_xTaskGetCurrentTaskHandle', type: 'boolean', value: false)
+option('INCLUDE_xTaskGetIdleTaskHandle', type: 'boolean', value: false)
+option('INCLUDE_xTaskAbortDelay', type: 'boolean', value: false)
+option('INCLUDE_xTaskGetSchedulerState', type: 'boolean', value: false)
+option('INCLUDE_xTaskGetIdleTaskHandle', type: 'boolean', value: false)
+option('INCLUDE_uxTaskGetStackHighWaterMark', type: 'boolean', value: false)
+
