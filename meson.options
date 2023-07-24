@@ -7,8 +7,8 @@ option('use_preemption', type: 'boolean', value: false)
 option('use_port_optimised_task_selection', type: 'boolean', value: true)
 option('use_tickless_idle', type: 'boolean', value: false)
 option('cpu_clock_hz', type: 'integer')
-option('systick_clock_hz', type: 'integer')
-option('tick_rate_hz', type: 'integer', min: 0, value: 1000)
+option('systick_clock_hz', type: 'integer', value: 0)
+option('tick_rate_hz', type: 'integer', min: 0, value: 0)
 option('max_priorities', type: 'integer', value: 5)
 option('minimal_stack_size', type: 'integer', value: 128)
 option('max_task_name_len', type: 'integer', value: 10)
@@ -45,7 +45,7 @@ option('use_stats_formatting_functions', type: 'boolean', value: false)
 
 # Co-routines
 option('use_co_routines', type: 'boolean', value: false)
-option('max_co_routine_priorities', type: 'boolean', value: false)
+option('max_co_routine_priorities', type: 'integer', value: 2)
 
 # Software timers
 option('use_timers', type: 'boolean', value: false)
@@ -80,6 +80,5 @@ option('INCLUDE_xTaskGetCurrentTaskHandle', type: 'boolean', value: false)
 option('INCLUDE_xTaskGetIdleTaskHandle', type: 'boolean', value: false)
 option('INCLUDE_xTaskAbortDelay', type: 'boolean', value: false)
 option('INCLUDE_xTaskGetSchedulerState', type: 'boolean', value: false)
-option('INCLUDE_xTaskGetIdleTaskHandle', type: 'boolean', value: false)
 option('INCLUDE_uxTaskGetStackHighWaterMark', type: 'boolean', value: false)
 
