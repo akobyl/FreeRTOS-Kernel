@@ -29,7 +29,7 @@ endif
 
 cpu_clock_hz = get_option('cpu_clock_hz')
 if cpu_clock_hz == 0
-  error("need to set cpu_clock_hz")
+  error('need to set cpu_clock_hz')
 else
   c_args += '-DconfigCPU_CLOCK_HZ=' + cpu_clock_hz.to_string()
 endif
@@ -41,14 +41,14 @@ endif
 
 tick_rate_hz = get_option('tick_rate_hz')
 if tick_rate_hz == 0
-  error("need to set tick_rate_hz")
+  error('need to set tick_rate_hz')
 else
   c_args += '-Dconfigtick_rate_HZ=' + tick_rate_hz.to_string()
 endif
 
 max_priorities = get_option('max_priorities')
 if max_priorities== 0
-  error("need to set max_priorities")
+  error('need to set max_priorities')
 else
   c_args += '-Dconfigmax_priorities=' + max_priorities.to_string()
 endif
