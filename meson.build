@@ -35,7 +35,7 @@ else
 endif
 
 systick_clock_hz = get_option('systick_clock_hz')
-if systick_clock_hz != 0:
+if systick_clock_hz != 0
   c_args += '-DconfigSYSTICK_CLOCK_HZ' + systick_clock_hz.to_string()
 endif
 
@@ -88,7 +88,7 @@ if use_recursive_mutexes
 endif
 
 use_counting_semaphores = get_option('use_counting_semaphores')
-if use_counting_mutexes
+if use_counting_semaphores
   c_args += '-DconfigUSE_COUNTING_MUTEXES=1'
 endif
 
