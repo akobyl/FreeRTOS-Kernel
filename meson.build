@@ -50,7 +50,7 @@ max_priorities = get_option('max_priorities')
 if max_priorities== 0
   error('need to set max_priorities')
 else
-  c_args += '-Dconfigmax_priorities=' + max_priorities.to_string()
+  c_args += '-DconfigMAX_PRIORITIES=' + max_priorities.to_string()
 endif
 
 minimal_stack_size = get_option('minimal_stack_size')
@@ -61,6 +61,8 @@ c_args += '-DconfigMAX_TASK_NAME=' + max_task_name_len.to_string()
 
 use_16_bit_ticks = get_option('use_16_bit_ticks')
 if use_16_bit_ticks
+  c_args += '-DconfigUSE_16_BIT_TICKS=1'
+else
   c_args += '-DconfigUSE_16_BIT_TICKS=0'
 endif
 
