@@ -43,7 +43,7 @@ tick_rate_hz = get_option('tick_rate_hz')
 if tick_rate_hz == 0
   error('need to set tick_rate_hz')
 else
-  c_args += '-Dconfigtick_rate_HZ=' + tick_rate_hz.to_string()
+  c_args += '-DconfigTICK_RATE_HZ=' + tick_rate_hz.to_string()
 endif
 
 max_priorities = get_option('max_priorities')
@@ -106,9 +106,22 @@ heap_clear_memory_on_clear = get_option('heap_clear_memory_on_clear')
 
 # Memory allocation 
 support_static_allocation = get_option('support_static_allocation')
+if support_static_allocation
+  c_args += '-DconfigSUPPORT_STATIC_ALLOCATION=1'
+endif
+
 support_dynamic_allocation = get_option('support_dynamic_allocation')
+if support_dynamic_allocation
+  c_args += '-DconfigSUPPORT_DYNAMIC_ALLOCATION=1'
+endif
+
 total_heap_size = get_option('total_heap_size')
+c_args += '-DconfigTOTAL_HEAP_SIZE=' + total_heap_size.to_string()
+
 application_allocated_heap = get_option('application_allocated_heap')
+if application_allocated_heap
+  c_args += '-DconfigAPPLICATION_ALLOCATED_HEAP=1'
+endif
 
 # Runtime stats
 generate_run_time_stats = get_option('generate_run_time_stats')

@@ -35,7 +35,7 @@ option('heap_clear_memory_on_clear', type: 'boolean', value: true)
 # Memory allocation 
 option('support_static_allocation', type: 'boolean', value: true)
 option('support_dynamic_allocation', type: 'boolean', value: true)
-option('total_heap_size', type: 'integer')
+option('total_heap_size', type: 'integer', value: 0)
 option('application_allocated_heap', type: 'boolean', value: false)
 
 # Runtime stats
