@@ -36,7 +36,7 @@ endif
 
 systick_clock_hz = get_option('systick_clock_hz')
 if systick_clock_hz != 0
-  c_args += '-DconfigSYSTICK_CLOCK_HZ' + systick_clock_hz.to_string()
+  c_args += '-DconfigSYSTICK_CLOCK_HZ=' + systick_clock_hz.to_string()
 endif
 
 tick_rate_hz = get_option('tick_rate_hz')
@@ -54,10 +54,10 @@ else
 endif
 
 minimal_stack_size = get_option('minimal_stack_size')
-c_args += '-DconfigMINIMAL_STACK_SIZE' + minimal_stack_size.to_string()
+c_args += '-DconfigMINIMAL_STACK_SIZE=' + minimal_stack_size.to_string()
 
 max_task_name_len = get_option('max_task_name_len')
-c_args += '-DconfigMAX_TASK_NAME' + max_task_name_len.to_string()
+c_args += '-DconfigMAX_TASK_NAME=' + max_task_name_len.to_string()
 
 use_16_bit_ticks = get_option('use_16_bit_ticks')
 if use_16_bit_ticks
