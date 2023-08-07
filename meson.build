@@ -315,14 +315,8 @@ freertos_srcs = files('croutine.c',
 
 freertos_srcs += 'portable/MemMang' / memmang + '.c'
 
-freertos_lib = static_library('freertos',
-                              freertos_srcs,
-                              include_directories: freertos_incs,
-                              c_args: c_args,
-                              )
-
 freertos_dep = declare_dependency(
                include_directories: freertos_incs,
-               link_with: freertos_lib,
+               sources: freertos_srcs,
                compile_args: c_args,
                )
